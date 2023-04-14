@@ -8,6 +8,7 @@ def agregar_usuario():
     else:
         usuarios[nombre] = {}
         print(f"Usuario '{nombre}' agregado.")
+               
 
 def eliminar_usuario():
     nombre = input("Ingrese el nombre del usuario a eliminar: ")
@@ -36,24 +37,45 @@ def eliminar_archivo():
 while True:
     print("""
     Seleccione una opción:
-    1. Agregar usuario
-    2. Eliminar usuario
-    3. Agregar archivo
-    4. Eliminar archivo
-    5. Salir
+    1. Administrar usuarios
+    2. Administrar archivos
+    3. Salir
     """)
 
     opcion = input("Opción: ")
 
     if opcion == "1":
-        agregar_usuario()
-    elif opcion == "2":
-        eliminar_usuario()
-    elif opcion == "3":
-        agregar_archivo()
-    elif opcion == "4":
-        eliminar_archivo()
-    elif opcion == "5":
+        while True:
+            print("""
+            Seleccione una opción:
+            1. Agregar usuario
+            2. Eliminar usuario
+            3. Salir
+            """)
+            opcion = input("Opción: ")
+            if opcion == "1" :
+                agregar_usuario()  
+            elif opcion == "2" :
+                eliminar_usuario()
+            elif opcion == "3" :
+                break
+    
+    elif opcion == "2" :
+        while True:
+            print ("""
+            Seleccione una opción:
+            1. Agregar archivo
+            2. Eliminar archivo
+            3. Salir
+            """)
+            opcion = input ("Opción: ")
+            if opcion == "1" :
+                agregar_archivo()
+            elif opcion == "2" :
+                eliminar_archivo()
+            elif opcion == "3" :
+                break
+    elif opcion == "3" :
         break
     else:
         print("Opción no válida.")
